@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <body>
+<head>
+    <style> 
+:root {
+--selective-yellow: hsl(42, 94%, 55%);
+--eerie-black-1: hsl(0, 0%, 9%);
+--eerie-black-2: hsl(180, 3%, 7%);
+--quick-silver: hsl(0, 0%, 65%);
+--radical-red: hsl(351, 83%, 61%);
+--light-gray: hsl(0, 0%, 80%);
+--isabelline: hsl(36, 33%, 94%);
+--gray-x-11: hsl(0, 0%, 73%);
+--kappel_15: hsla(170, 75%, 41%, 0.15);
+--platinum: hsl(0, 0%, 90%);
+--gray-web: hsl(0, 0%, 50%);
+--black_80: hsla(0, 0%, 0%, 0.8);
+--white_50: hsla(0, 0%, 100%, 0.5);
+--black_50: hsla(0, 0%, 0%, 0.5);
+--black_30: hsla(0, 0%, 0%, 0.3);
+--kappel: hsl(170, 75%, 41%);
+--white: hsl(0, 0%, 100%);
+
+
+--gradient: linear-gradient(-90deg,hsl(151, 58%, 46%) 0%,hsl(170, 75%, 41%) 100%);
+--ff-league_spartan: 'League Spartan', sans-serif;
+--ff-poppins: 'Poppins', sans-serif; 
+
+--fs-1: 4.2rem;
+--fs-2: 3.2rem;
+--fs-3: 2.3rem;
+--fs-4: 1.8rem;
+--fs-5: 1.5rem;
+--fs-6: 1.4rem;
+--fs-7: 1.3rem;
+
+--fw-500: 500;
+--fw-600: 600;
+
+--section-padding: 75px;
+
+--shadow-1: 0 6px 15px 0 hsla(0, 0%, 0%, 0.05);
+--shadow-2: 0 10px 30px hsla(0, 0%, 0%, 0.06);
+--shadow-3: 0 10px 50px 0 hsla(220, 53%, 22%, 0.1);
+
+--radius-pill: 500px;
+--radius-circle: 50%;
+--radius-3: 3px;
+--radius-5: 5px;
+--radius-10: 10px;
+
+--transition-1: 0.25s ease;
+--transition-2: 0.5s ease;
+--cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+--cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+}
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a,
+img,
+span,
+data,
+input,
+button,
+ion-icon { display: block; }
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+img { height: auto; }
+
+input,
+button {
+background: none;
+border: none;
+font: inherit;
+}
+
+input { width: 100%; }
+
+button { cursor: pointer; }
+
+ion-icon { pointer-events: none; }
+
+address { font-style: normal; }
+
+html {
+font-family: var(--ff-poppins);
+font-size: 10px;
+scroll-behavior: smooth;
+}
+
+body {
+background-color: var(--white);
+color: var(--gray-web);
+font-size: 1.6rem;
+line-height: 1.75;
+}
+
+:focus-visible { outline-offset: 4px; }
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
+
+::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
+
+::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
+
+
+.container { padding-inline: 15px; }
+
+.section { padding-block: var(--section-padding); }
+
+.shape {
+position: absolute;
+display: none;
+}
+
+.has-bg-image {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+
+.h1,
+.h2,
+.h3 {
+color: var(--eerie-black-1);
+font-family: var(--ff-league_spartan);
+line-height: 1;
+}
+
+.h1,
+.h2 { font-weight: var(--fw-600); }
+
+.h1 { font-size: var(--fs-1); }
+
+.h2 { font-size: var(--fs-2); }
+
+.h3 {
+font-size: var(--fs-3);
+font-weight: var(--fw-500);
+}
+
+.section-title {
+--color: var(--radical-red);
+text-align: center;
+}
+
+.section-title .span {
+display: inline-block;
+color: var(--color);
+}
+
+.btn {
+background-color: var(--kappel);
+color: var(--white);
+font-family: var(--ff-league_spartan);
+font-size: var(--fs-4);
+display: flex;
+align-items: center;
+gap: 7px;
+max-width: max-content;
+padding: 10px 20px;
+border-radius: var(--radius-5);
+overflow: hidden;
+}
+
+.has-before,
+.has-after {
+position: relative;
+z-index: 1;
+}
+
+.has-before::before,
+.has-after::after {
+position: absolute;
+content: "";
+}
+
+.btn::before {
+inset: 0;
+background-image: var(--gradient);
+z-index: -1;
+border-radius: inherit;
+transform: translateX(-100%);
+transition: var(--transition-2);
+}
+
+.btn:is(:hover, :focus)::before { transform: translateX(0); }
+
+.img-holder {
+aspect-ratio: var(--width) / var(--height);
+background-color: var(--light-gray);
+overflow: hidden;
+}
+
+.img-cover {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.section-subtitle {
+font-size: var(--fs-5);
+text-transform: uppercase;
+font-weight: var(--fw-500);
+letter-spacing: 1px;
+text-align: center;
+margin-block-end: 15px;
+}
+
+.section-text {
+font-size: var(--fs-5);
+text-align: center;
+margin-block: 15px 25px;
+}
+
+.grid-list {
+display: grid;
+gap: 30px;
+}
+
+.category-card,
+.stats-card { background-color: hsla(var(--color), 0.1); }
+
+:is(.course, .blog) .section-title { margin-block-end: 40px; }
+.header .btn { display: none; }
+.header {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+background-color: var(--white);
+padding-block: 12px;
+box-shadow: var(--shadow-1);
+z-index: 4;
+}
+.header.active { position: fixed; }
+.header .container,
+.header-actions,
+.navbar .wrapper {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+}
+.header-action-btn,
+.nav-close-btn {
+position: relative;
+color: var(--eerie-black-1);
+font-size: 24px;
+transition: var(--transition-1);
+}
+.header-action-btn:is(:hover, :focus) { color: var(--kappel); }
+.header-action-btn .btn-badge {
+position: absolute;
+top: -10px;
+right: -10px;
+background-color: var(--kappel);
+color: var(--white);
+font-family: var(--ff-league_spartan);
+font-size: var(--fs-6);
+min-width: 20px;
+height: 20px;
+border-radius: var(--radius-circle);
+}
+.navbar {
+position: fixed;
+top: 0;
+left: -320px;
+background-color: var(--white);
+width: 100%;
+max-width: 320px;
+height: 100%;
+z-index: 2;
+transition: 0.25s var(--cubic-in);
+}
+
+.navbar.active {
+transform: translateX(320px);
+transition: 0.5s var(--cubic-out);
+}
+
+.navbar .wrapper {
+padding: 15px 20px;
+border-block-end: 1px solid var(--platinum);
+}
+
+.nav-close-btn {
+background-color: var(--white);
+box-shadow: var(--shadow-2);
+padding: 8px;
+border-radius: var(--radius-circle);
+}
+
+.nav-close-btn:is(:hover, :focus) {
+background-color: var(--kappel);
+color: var(--white);
+}
+
+.navbar-list { padding: 15px 20px; }
+
+.navbar-item:not(:last-child) { border-block-end: 1px solid var(--platinum); }
+
+.navbar-link {
+padding-block: 8px;
+font-weight: var(--fw-500);
+transition: var(--transition-1);
+}
+
+.navbar-link:is(:hover, :focus) { color: var(--kappel); }
+
+.overlay {
+position: fixed;
+inset: 0;
+background-color: var(--black_80);
+pointer-events: none;
+opacity: 0;
+z-index: 1;
+transition: var(--transition-1);
+}
+
+.overlay.active {
+opacity: 1;
+pointer-events: all;
+}
+.hero { padding-block-start: calc(var(--section-padding) + 80px); }
+
+.hero .container {
+display: grid;
+gap: 40px;
+}
+
+.hero-text {
+color: var(--eerie-black-1);
+font-size: var(--fs-4);
+text-align: center;
+margin-block: 18px 20px;
+}
+
+.hero .btn { margin-inline: auto; }
+
+.hero-banner {
+display: grid;
+grid-template-columns: 1fr 0.8fr;
+align-items: flex-start;
+gap: 30px;
+}
+
+.hero-banner .img-holder.one {
+border-top-right-radius: 70px;
+border-bottom-left-radius: 110px;
+}
+
+.hero-banner .img-holder.two {
+border-top-left-radius: 50px;
+border-bottom-right-radius: 90px;
+}
+
+.category .section-subtitle { color: var(--radical-red); }
+
+.category .section-title { --color: var(--kappel); }
+
+.category .section-text { margin-block-end: 40px; }
+
+.category-card {
+padding: 50px 30px;
+text-align: center;
+border-radius: var(--radius-5);
+}
+
+.category-card .card-icon {
+background-color: hsla(var(--color), 0.1);
+width: 80px;
+height: 80px;
+display: grid;
+place-items: center;
+border-radius: var(--radius-circle);
+margin-inline: auto;
+margin-block-end: 30px;
+}
+
+.category-card .card-text {
+color: var(--eerie-black-1);
+font-size: var(--fs-5);
+margin-block: 15px 25px;
+}
+
+.category-card .card-badge {
+background-color: hsla(var(--color), 0.1);
+color: hsl(var(--color));
+font-size: var(--fs-5);
+font-weight: var(--fw-500);
+padding: 2px 18px;
+max-width: max-content;
+margin-inline: auto;
+border-radius: var(--radius-5);
+}
+
+.about {
+padding-block-start: 100;
+overflow: hidden;
+}
+
+.about .container {
+display: grid;
+gap: 50px;
+}
+
+.about-banner {
+position: relative;
+z-index: 1;
+
+}
+
+.about-banner .img-holder { border-radius: var(--radius-200)}
+
+.about-shape-2 {
+display: block;
+bottom: -100px;
+left: -60px;
+animation: bounce 3.5s infinite;
+}
+@keyframes bounce {
+0%,
+20%,
+50%,
+80%,
+100% { transform: translateY(0); }
+
+40% { transform: translateY(-30px); }
+
+60% { transform: translateY(-15px); }
+}
+
+.about :is(.section-subtitle, .section-title, .section-text) {
+text-align: left;
+}
+
+.about-item {
+margin-block: 15px;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.about-item ion-icon {
+color: var(--selective-yellow);
+font-size: 20px;
+--ionicon-stroke-width: 50px;
+}
+
+.about-item .span {
+color: var(--eerie-black-1);
+font-family: var(--ff-league_spartan);
+}
+
+.course { background-color: var(--isabelline); }
+
+.course-card {
+position: relative;
+background-color: var(--white);
+border-radius: var(--radius-5);
+overflow: hidden;
+}
+
+.course-card .img-cover { transition: var(--transition-2); }
+
+.course-card:is(:hover, :focus-within) .img-cover { transform: scale(1.1); }
+
+.course-card :is(.abs-badge, .badge) {
+font-family: var(--ff-league_spartan);
+border-radius: var(--radius-3);
+}
+
+.course-card .abs-badge {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: var(--selective-yellow);
+color: var(--white);
+display: flex;
+align-items: center;
+gap: 5px;
+line-height: 1;
+padding: 6px 8px;
+padding-block-end: 3px;
+}
+
+.course-card .abs-badge ion-icon {
+font-size: 18px;
+margin-block-end: 5px;
+--ionicon-stroke-width: 50px;
+}
+
+.course-card .card-content { padding: 25px; }
+
+.course-card .badge {
+background-color: var(--kappel_15);
+max-width: max-content;
+color: var(--kappel);
+line-height: 25px;
+padding-inline: 10px;
+}
+
+.course-card .card-title {
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+margin-block: 15px 8px;
+transition: var(--transition-1);
+}
+
+.course-card .card-title:is(:hover, :focus) { color: var(--kappel); }
+
+.course-card :is(.wrapper, .rating-wrapper, .card-meta-list, .card-meta-item) {
+display: flex;
+align-items: center;
+}
+.course-card .wrapper { gap: 10px; }
+.course-card .rating-wrapper { gap: 3px; }
+.course-card .rating-wrapper ion-icon { color: var(--selective-yellow); }
+.course-card .rating-text {
+color: var(--eerie-black-1);
+font-size: var(--fs-6);
+font-weight: var(--fw-500);
+}
+.course-card .price {
+color: var(--radical-red);
+font-family: var(--ff-league_spartan);
+font-size: var(--fs-4);
+font-weight: var(--fw-600);
+margin-block: 8px 15px;
+}
+.course-card .card-meta-list { flex-wrap: wrap; }
+.course-card .card-meta-item {
+position: relative;
+gap: 5px;
+}
+
+.course-card .card-meta-item:not(:last-child)::after {
+content: "|";
+display: inline-block;
+color: var(--platinum);
+padding-inline: 10px;
+}
+.course-card .card-meta-item ion-icon {
+color: var(--quick-silver);
+--ionicon-stroke-width: 50px;
+}
+.course-card .card-meta-item .span {
+color: var(--eerie-black-1);
+font-size: var(--fs-7);
+}
+.course .btn {
+margin-inline: auto;
+margin-block-start: 60px;
+}
+.video {
+background-size: contain;
+background-position: center top;
+}
+
+.video-banner {
+position: relative;
+border-top-right-radius: 80px;
+border-bottom-left-radius: 120px;
+}
+
+.video .play-btn {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: var(--radical-red);
+font-size: 30px;
+padding: 16px;
+color: var(--white);
+border-radius: var(--radius-circle);
+box-shadow: 0 0 0 0 var(--white_50);
+z-index: 1;
+animation: pulse 3s ease infinite;
+}
+
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 var(--white_50); }
+100% { box-shadow: 0 0 0 20px transparent; }
+}
+
+.video-banner::after {
+inset: 0;
+background-color: var(--black_30);
+}
+
+.stats-card {
+text-align: center;
+padding: 25px;
+border-radius: var(--radius-10);
+}
+
+.stats-card :is(.card-title, .card-text) { font-family: var(--ff-league_spartan); }
+
+.stats-card .card-title {
+color: hsl(var(--color));
+font-size: var(--fs-2);
+line-height: 1.1;
+}
+
+.stats-card .card-text {
+color: var(--eerie-black-1);
+text-transform: uppercase;
+}
+
+
+.blog-card .card-banner { border-radius: var(--radius-10); }
+
+.blog-card .card-banner .img-cover { transition: var(--transition-2); }
+
+.blog-card .card-banner::after {
+inset: 0;
+background-color: var(--black_50);
+opacity: 0;
+transition: var(--transition-1);
+}
+
+.blog-card:is(:hover, :focus-within) .card-banner .img-cover { transform: scale(1.1); }
+
+.blog-card:is(:hover, :focus-within) .card-banner::after { opacity: 1; }
+
+.blog-card .card-content {
+position: relative;
+margin-inline: 15px;
+background-color: var(--white);
+padding: 20px;
+border-radius: var(--radius-10);
+box-shadow: var(--shadow-3);
+margin-block-start: -100px;
+z-index: 1;
+}
+
+.blog-card .card-btn {
+position: absolute;
+top: -40px;
+right: 30px;
+background-color: var(--kappel);
+color: var(--white);
+font-size: 20px;
+padding: 20px;
+border-radius: var(--radius-circle);
+transition: var(--transition-1);
+opacity: 0;
+}
+
+.blog-card .card-btn:is(:hover, :focus) { background-color: var(--radical-red); }
+
+.blog-card:is(:hover, :focus-within) .card-btn {
+opacity: 1;
+transform: translateY(10px);
+}
+
+.blog-card :is(.card-meta-item, .card-text, .card-subtitle) {
+font-size: var(--fs-5);
+}
+
+.blog-card .card-subtitle { text-transform: uppercase; }
+
+.blog-card .card-title {
+margin-block: 10px 15px;
+transition: var(--transition-1);
+}
+
+.blog-card .card-title:is(:hover, :focus) { color: var(--kappel); }
+
+.blog-card :is(.card-meta-list, .card-meta-item) { display: flex; }
+
+.blog-card .card-meta-list {
+flex-wrap: wrap;
+gap: 10px 20px;
+margin-block-end: 20px;
+}
+
+.blog-card .card-meta-item {
+gap: 10px;
+align-items: center;
+color: var(--eerie-black-1);
+}
+
+.blog-card .card-meta-item ion-icon {
+color: var(--kappel);
+font-size: 18px;
+--ionicon-stroke-width: 40px;
+}
+.footer {
+background-repeat: no-repeat;
+background-color: var(--eerie-black-2);
+color: var(--gray-x-11);
+font-size: var(--fs-5);
+}
+.footer-top {
+display: grid;
+gap: 30px;
+}
+
+.footer-brand-text { margin-block: 20px; }
+
+.footer-brand .wrapper {
+display: flex;
+gap: 5px;
+}
+
+.footer-brand .wrapper .span { font-weight: var(--fw-500); }
+
+.footer-link { transition: var(--transition-1); }
+.footer-link:is(:hover, :focus) { color: var(--kappel); }
+
+.footer-list-title {
+color: var(--white);
+font-family: var(--ff-league_spartan);
+font-size: var(--fs-3);
+font-weight: var(--fw-600);
+margin-block-end: 10px;
+}
+.footer-list .footer-link { padding-block: 5px; }
+.newsletter-form { margin-block: 20px 35px; }
+.newsletter-form .input-field {
+background-color: var(--white);
+padding: 12px;
+border-radius: var(--radius-5);
+margin-block-end: 20px;
+}
+.newsletter-form .btn {
+min-width: 100%;
+justify-content: center;
+}
+.social-list {
+display: flex;
+gap: 25px;
+}
+.social-link { font-size: 20px; }
+.footer-bottom {
+border-block-start: 1px solid var(--eerie-black-1);
+padding-block: 30px;
+}
+.copyright { text-align: center; }
+.copyright-link {
+color: var(--kappel);
+display: inline-block;
+}
+.back-top-btn {
+position: fixed;
+bottom: 40px;
+right: 30px;
+background-color: var(--kappel);
+color: var(--white);
+font-size: 20px;
+padding: 15px;
+border-radius: var(--radius-circle);
+z-index: 3;
+opacity: 0;
+pointer-events: none;
+transition: var(--transition-1);
+}
+
+.back-top-btn.active {
+transform: translateY(10px);
+opacity: 1;
+pointer-events: all;
+}
+@media (min-width: 575px) {
+.container {
+  max-width: 520px;
+  width: 100%;
+  margin-inline: auto;
+}
+.grid-list { grid-template-columns: 1fr 1fr; }
+:is(.course, .blog) .grid-list { grid-template-columns: 1fr; }
+.header .container { max-width: unset; }
+.header-actions { gap: 30px; }
+.hero-banner { grid-template-columns: 1fr 0.9fr; }
+.video .play-btn { padding: 25px; }
+.stats-card { padding: 40px 30px; }
+.footer-brand,
+.footer-list:last-child { grid-column: 1 / 3; }
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.newsletter-form .input-field { margin-block-end: 0; }
+.newsletter-form .btn { min-width: max-content; }
+}
+@media (min-width: 768px) {
+:root {
+  --fs-1: 4.6rem;
+  --fs-2: 3.8rem;
+}
+.container { max-width: 720px; }
+.btn { padding: 15px 30px; }
+:is(.course, .blog) .grid-list { grid-template-columns: 1fr 1fr; }
+.header .container { padding-inline: 30px; }
+.header .btn {
+  display: flex;
+  padding: 10px 30px;
+  margin-inline: 20px;
+}
+.hero { padding-block-start: calc(var(--section-padding) + 90px); }
+
+.hero .container { gap: 50px; }
+
+.hero-text { margin-block-end: 30px; }
+
+.hero-banner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-banner .img-holder { max-width: max-content; }
+
+.hero-banner .img-holder.one { justify-self: flex-end; }
+
+.hero-banner .img-holder.two { margin-block-start: 100px; }
+
+.hero-shape-1 {
+  display: block;
+  position: absolute;
+  bottom: -40px;
+  left: -10px;
+}
+.about { padding-block-start: 50px; }
+.about-banner {
+  padding: 60px;
+  padding-inline-end: 0;
+}
+.about-banner .img-holder {
+  max-width: max-content;
+  margin-inline: auto;
+}
+.about-shape-1 {
+  display: block;
+  top: -40px;
+  right: -70px;
+}
+
+.footer-brand,
+.footer-list:last-child { grid-column: auto; }
+
+.newsletter-form .btn { padding-block: 10px; }
+}
+@media (min-width: 992px) {
+
+:root {
+
+  --fs-1: 5.5rem;
+  --fs-2: 4.5rem;
+
+}
+.container { max-width: 960px; }
+
+.grid-list { grid-template-columns: repeat(4, 1fr); }
+
+:is(.course, .blog) .grid-list { grid-template-columns: repeat(3, 1fr); }
+
+.hero .container {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero .section-title,
+.hero-text { text-align: left; }
+
+.hero .btn { margin-inline: 0; }
+.about .container {
+  grid-template-columns: 1fr 0.6fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.video-banner {
+  max-width: 75%;
+  margin-inline: auto;
+}
+.footer .grid-list { grid-template-columns: 1fr 0.6fr 0.6fr 1.2fr; }
+
+}
+
+@media (min-width: 1200px) {
+:root {
+
+  --fs-1: 6.5rem;
+  --section-padding: 120px;
+
+}
+.container { max-width: 1185px; }
+
+.shape { display: block; }
+
+.about-content,
+.video-card,
+.blog { position: relative; }
+
+.header-action-btn:last-child,
+.navbar .wrapper,
+.overlay { display: none; }
+
+.header.active {
+  transform: translateY(-100%);
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+.navbar,
+.navbar.active { all: unset; }
+
+.navbar-list {
+  display: flex;
+  gap: 50px;
+  padding: 0;
+
+.navbar-item:not(:last-child) { border-block-end: none; }
+
+.navbar-link {
+  color: var(--eerie-black-1);
+  padding-block: 20px;
+}
+
+.header .btn { margin-inline-end: 0; }
+.hero { padding-block-start: calc(var(--section-padding) + 120px); }
+
+.hero .container { gap: 80px; }
+
+.hero-shape-2 {
+  top: -80px;
+  z-index: -1;
+}
+.about .container { gap: 110px; }
+
+.about-banner .img-holder { margin-inline: 0; }
+
+.about-shape-3 {
+  top: -20px;
+  left: -100px;
+  z-index: -1;
+}
+
+.about-content { z-index: 1; }
+
+.about-shape-4 {
+  top: 30px;
+  right: -60px;
+  z-index: -1;
+}
+.video-shape-1 {
+  top: -50px;
+  left: 0;
+}
+
+.video-shape-2 {
+  top: -80px;
+  right: 120px;
+  z-index: 1;
+}
+.blog-shape {
+  top: 0;
+  left: 0;
+}
+}
+    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VISHNU EDUCATIONAL BLOG</title>
+  <meta name="title" content="VISHNU Educational blog ">
+  <link rel="preconnect" href="https://t3.ftcdn.net/jpg/03/94/27/28/360_F_394272895_Z7bH4xDxI3MMbgHmfTyYQFpwBpPPxNaN.jpg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://us.123rf.com/450wm/rawpixel/rawpixel1604/rawpixel160421261/55723399-education-knowledge-studying-learning-university-concept.jpg"
+    rel="stylesheet">
+  <link rel="preload" as="image" href="https://previews.123rf.com/images/rangga173/rangga1732110/rangga173211000008/179224265-abstract-multicolored-radial-dot-pattern-vector-illustration-simple-eps-8-no-effect-or.jpg">
+  <link rel="preload" as="image" href="https://us.123rf.com/450wm/vectora/vectora2011/vectora201104680/167573193-dots-dotted-circular-spiral-swirl-twirl-of-circles-stippling-pointillist-design-speckles.jpg?ver=6">
+  <link rel="preload" as="image" href="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/SKD-bqAkQjhvrjayf/videoblocks-motion-abstract-geometric-shapes-colourful-memphis-background-elegant-and-luxury-dynamic-style-for-business-and-corporate-template_bfrwsem3l_thumbnail-180_05.jpg">
+</head>
+<body id="top">
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="data:image/png;base64,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" width="162" height="50" alt="VISHNU Education">
+      </a>
+      <nav class="navbar" data-navbar>
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="data:image/png;base64,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" width="162" height="50" alt="VISHNU Education">
+          </a>
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#courses" class="navbar-link" data-nav-link>Courses</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+          <li class="navbar-item">
+            <a href="logout" class="navbar-link" data-nav-link>logout</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="box">
+        <input type="search here" name="search here"placeholder="search">
+        </div>
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <a href="signup" class="btn has-before">
+          <span class="span">Register</span>
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+<main>
+    <article>
+      <section class="section hero has-bg-image" id="home" aria-label="home"
+        style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjK15GEx_Ebdp2mUiLjLQq6ct57u_fYHCveg&usqp=CAU')">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="h1 section-title">
+              The Best Platform to <span class="span">Enroll</span> for Courses
+            </h1>
+            <p class="hero-text">
+              Creating the Vishnu Education Blog website is a platform designed to facilitate student learning and knowledge acquisition.
+            </p>
+            <a href="#courses" class="btn has-before">
+              <span class="span">Find courses</span>
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+          <figure class="hero-banner">
+            <div class="img-holder one" style="--width: 270; --height: 300;">
+              <img src="https://news.cgtn.com/news/2020-10-10/Overcoming-the-digital-divide-in-online-education-UtQ3NUNOM0/img/60e933395aef48f2a3e77d7962aa7ec4/60e933395aef48f2a3e77d7962aa7ec4.jpeg" width="80" height="70" alt="hero banner" class="img-cover">
+            </div>
+            <div class="img-holder two" style="--width: 240; --height: 370;">
+              <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b25saW5lJTIwY2xhc3N8ZW58MHx8MHx8fDA%3D&w=1000&q=80" width="240" height="370" alt="hero banner" class="img-cover">
+            </div>
+            <img src="https://img.freepik.com/free-vector/disco-lights-dots-pattern-black-background-vector-illustration_460848-10359.jpg?size=626&ext=jpg&ga=GA1.1.1590738004.1695884330&semt=ais" width="200" height="200" alt="" class="shape hero-shape-1">
+          </figure>
+        </div>
+      </section>
+      <section class="section category" aria-label="category">
+        <div class="container">
+          <p class="section-subtitle">Categories</p>
+          <h2 class="h2 section-title">
+             <span class="span">Btech Department Courses </span> 
+          </h2>
+          <p class="section-text">Here these are the courses for student to acquire knowledge </p>
+          <ul class="grid-list">
+            <li>
+              <div class="category-card" style="--color: 170, 75%, 41%">
+                <div class="card-icon">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwO2AW37GjkZHMLhM9CY7A2dqW8MVGnd5IGQ&usqp=CAU" width="120" height="100" loading="lazy"
+                    alt="Compture Science Engineering" class="img">
+                </div>
+                <h3 class="h3">
+                  <a href="cse" class="card-title">Compture Science Engineering</a><br>
+                  <p>(CSE,IT,CSM,CSD)</p>
+                </h3>
+                <p class="card-text">
+                  All compture science students can learn here their academics.
+                </p>
+                <span class="card-badge"><a href="#courses">4 YEARS</a></span>
+              </div>
+            </li>
+            <li>
+              <div class="category-card" style="--color: 351, 83%, 61%">
+                <div class="card-icon">
+                  <img src="https://t4.ftcdn.net/jpg/04/74/20/09/360_F_474200956_REV3AIzBImlph66TRWXZiqWnQjjpMb4r.jpg" width="120" height="40" loading="lazy"
+                    alt="Non-Degree Programs" class="img">
+                </div>
+                <h3 class="h3">
+                  <a href="ece" class="card-title">Electrial & Electronic Engineering</a><br>
+                 <p>(ECE ,EEE)</p>
+                </h3>
+                <p class="card-text"> All ECE & EEE students can learn here their academics </p>
+                <span class="card-badge">4 YESRS</span>
+              </div>
+            </li>
+            <li>
+              <div class="category-card" style="--color: 229, 75%, 58%">
+                <div class="card-icon">
+                  <img src="https://media1.thehungryjpeg.com/thumbs2/ori_3801290_qevna68xib09ccp830sf0hc2ob5d773es9zl2uiv_monogram-me-logo-design.jpg" width="100" height="50" loading="lazy"
+                    alt="Off-Campus Programs" class="img">
+                </div>
+                <h3 class="h3">
+                  <a href="mech" class="card-title">Mechanical Engineering</a><br>(MECH)</h3>
+                <p class="card-text"> All Mechanical students can learn here their academics. </p>
+                <span class="card-badge"> 4 YEARS</span>
+              </div>
+            </li>
+            <li>
+              <div class="category-card" style="--color: 42, 94%, 55%">
+                <div class="card-icon">
+                  
+                  <img src="https://i.pinimg.com/736x/70/e0/a1/70e0a193c34ba43e0c11dd28ee1067d1.jpg" width="100" height="50" loading="lazy"
+                    alt="Off-Campus Programs" class="img">
+                </div>
+                <h3 class="h3">
+                  <a href="civil" class="card-title">Civil Engineering</a> <br>(CE)</h3>
+                  
+                <p class="card-text">All Civil Engineering students can learn here their academics. by this</p>
+                <span class="card-badge"> 4 YEARS</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+          <figure class="about-banner">
+            <div class="img-holder" style="--width: 520; --height: 370;">
+              <img src="https://thumbs.dreamstime.com/b/back-to-school-happy-child-sitting-desk-girl-doing-homework-online-education-204282761.jpg?w=768" width="520" height="370" loading="lazy" alt="about banner"
+                class="img-cover">
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz1J-uSJvJmE2i4CkajYxUhZ_YaDPtbVqSLA&usqp=CAU" width="100" height="450" loading="lazy" alt=""
+              class="shape about-shape-1">
+              <img src="https://us.123rf.com/450wm/syuzannam/syuzannam1804/syuzannam180400185/99417778-50k-likes-thank-you-card-template-for-social-media-vector-illustration.jpg?ver=6" width="151" height="100" loading="lazy" alt=""
+              class="shape about-shape-2">
+            </figure>
+            <div class="about-content">
+              <p class="section-subtitle">About Us</p>
+              <h2 class="h2 section-title">
+              Over 10 Years in <span class="span">Distant learning</span> for Skill Development
+            </h2>
+            <p class="section-text">Experienced the providing remote education and training to enhance skills.It accumulated valuable expertise in this field. It underscores a commitment to fostering skill development through remote education for an extended period</p>
+            <ul class="about-list">
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+                <span class="span">Expert Trainers</span>
+              </li>
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+                <span class="span">Online Remote Learning</span>
+              </li>
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+                <span class="span">Lifetime Access</span>
+              </li>
+            </ul>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjqLXUQdc4qkufNG4uEjlC4OHvVxTMeERTgA&usqp=CAU" width="100" height="100" loading="lazy" alt=""
+              class="shape about-shape-4">
+          </div>
+        </div>
+      </section>
+      <section class="section course" id="courses" aria-label="course">
+        <div class="container">
+          <p class="section-subtitle">Popular Courses</p>
+          <h2 class="h2 section-title">Pick A Course To Get Started</h2>
+          <ul class="grid-list">
+            <li>
+              <div class="course-card">
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="https://www.shutterstock.com/image-vector/python-coding-language-sign-on-260nw-1389877574.jpg" width="370" height="220" loading="lazy"
+                    alt="Build Responsive Real- World Websites with HTML and CSS" class="img-cover">
+                </figure>
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                  <span class="span">8 Weeks</span>
+                </div>
+                <div class="card-content">
+                  <span class="badge">Beginner</span>
+                  <h3 class="h3">
+                    <a href="python" class="card-title"> Beginner Python</a>
+                  </h3>
+                  <div class="wrapper">
+                    <div class="rating-wrapper">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p class="rating-text">(5.0/7 Rating)</p>
+                  </div>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">8 Lessons</span>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">50 Students</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="course-card">
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="https://images.idgesg.net/images/article/2019/05/java_binary_code_gears_programming_coding_development_by_bluebay2014_gettyimages-1040871468_2400x1600-100795798-large.jpg?auto=webp&quality=85,70" width="370" height="220" loading="lazy"
+                    alt="Java Programming Masterclass for Software Developers" class="img-cover">
+                </figure>
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                  <span class="span">8 Weeks</span>
+                </div>
+                <div class="card-content">
+                  <span class="badge">beginners</span>
+                  <h3 class="h3">
+                    <a href="java" class="card-title">Java Programming </a>
+                  </h3>
+                  <div class="wrapper">
+                    <div class="rating-wrapper">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p class="rating-text">(4.5 /9 Rating)</p>
+                  </div>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">15 Lessons</span>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">155 Students</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="course-card">
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="https://images.pond5.com/4k-c-programming-language-word-footage-111508650_iconl.jpeg" width="370" height="220" loading="lazy"
+                    alt="The Complete Camtasia Course for Content Creators" class="img-cover">
+                </figure>
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                  <span class="span">12 Weeks</span>
+                </div>
+                <div class="card-content">
+                  <span class="badge">Beginner</span>
+                  <h3 class="h3">
+                    <a href="C" class="card-title">C programming</a>
+                  </h3>
+                  <div class="wrapper">
+                    <div class="rating-wrapper">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p class="rating-text">(4.9 /7 Rating)</p>
+                  </div>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">10 Lessons</span>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">100 Students</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <a href="#blog" class="btn has-before">
+            <span class="span">Browse more courses</span>
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
+      </section>
+      <section class="video has-bg-image" aria-label="video"
+        style="background-image: url('https://youtu.be/oH9oBQz1FW8')">
+        <div class="container">
+          <div class="video-card">
+            <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
+              <img src="https://media.istockphoto.com/id/1392016982/photo/mixed-group-of-business-people-sitting-around-a-table-and-talking.jpg?s=612x612&w=0&k=20&c=d7mWQhdzKrowHYTWXXcCrNn02uyfLYQYB78M75G8lKg=" width="970" height="550" loading="lazy" alt="video banner"
+                class="img-cover">
+                <a src="https://youtu.be/oH9oBQz1FW8"></a>
+                <ion-icon name="play" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+            </div>
+          </div>
+      </section>
+      <section class="section stats" aria-label="stats">
+        <div class="container">
+          <ul class="grid-list">
+            <li>
+              <div class="stats-card" style="--color: 170, 75%, 41%">
+                <h3 class="card-title">29.3k</h3>
+                <p class="card-text">Student Enrolled</p>
+              </div>
+            </li>
+            <li>
+              <div class="stats-card" style="--color: 351, 83%, 61%">
+                <h3 class="card-title">32.4K</h3>
+                <p class="card-text">Class Completed</p>
+              </div>
+            </li>
+            <li>
+              <div class="stats-card" style="--color: 260, 100%, 67%">
+                <h3 class="card-title">100%</h3>
+                <p class="card-text">Satisfaction Rate</p>
+              </div>
+            </li>
+            <li>
+              <div class="stats-card" style="--color: 42, 94%, 55%">
+                <h3 class="card-title">354+</h3>
+                <p class="card-text">Top Instructors</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section blog has-bg-image" id="blog" aria-label="blog"
+        style="background-image: url('./assets/images/blog-bg.svg')">
+        <div class="container">
+          <p class="section-subtitle">Trending Courses</p>
+          <h2 class="h2 section-title">Get Things With Vishnuedu</h2>
+          <ul class="grid-list">
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                  <img src="https://raysonline.in/wp-content/uploads/2020/04/fullstack.jpg" width="370" height="370" loading="lazy"
+                    alt="Become A Better Blogger: Content Planning" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="fullstack" class="card-btn" aria-label="read more">
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+                  <a href="fullstack" class="card-subtitle">Online</a>
+                  <h3 class="h3">
+                    <a href="fullstack" class="card-title">Fullstack Webdevelopment</a>
+                  </h3>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">Oct 16, 2023</span>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">Comments</span>
+                    </li>
+                  </ul>
+                  <p class="card-text">
+                    Develop a website using html and javascript , styling with css.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                  <img src="https://thumbs.dreamstime.com/b/artificial-intelligence-ai-research-robot-cyborg-development-future-people-living-digital-data-mining-machine-learning-171270756.jpg" width="370" height="370" loading="lazy"
+                    alt="Become A Better Blogger: Content Planning" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="machinelearning" class="card-btn" aria-label="read more">
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+                  <a href="machinelearning" class="card-subtitle">Online</a>
+                  <h3 class="neh3">
+                    <a href="machinelearning" class="card-title">Machine learning</a>
+                  </h3>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">Oct 16, 2023</span>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">Comments</span>
+                    </li>
+                  </ul>
+                  <p class="card-text">
+                    It focusses on the use of data and algorithms to imitate the way that humans learn.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="blog-card">
+                <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                  <img src="https://e0.pxfuel.com/wallpapers/508/710/desktop-wallpaper-augmented-reality-artificial-intelligence-brain-intelligence.jpg" width="370" height="370" loading="lazy"
+                    alt="Become A Better Blogger: Content Planning" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="deeplearning" class="card-btn" aria-label="read more">
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+                  <a href="deeplearning" class="card-subtitle">Online</a>
+                  <h3 class="h3">
+                    <a href="deeplearning" class="card-title">Deep learning</a>
+                  </h3>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">Oct 16, 2023</span>
+                    </li>
+                    <li class="card-meta-item">
+                      <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+                      <span class="span">Comments</span>
+                    </li>
+                  </ul>
+                  <p class="card-text">
+                    It imitates the way human gain certain types of knowledge.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          </div>
+      </section>
+    </article>
+  </main>
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+    <div class="footer-top section">
+      <div class="container grid-list">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="data:image/jpeg;base64,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" width="100" height="40" alt="vishnu logo">
+          </a>
+          <p class="footer-brand-text">
+            This platform offers a versatile and accessible for the students.with the convenience of learning from anywhere,this website empowers individuals to pursue education on their own.
+          </p>
+          <div class="wrapper">
+            <span class="span">Add:</span>
+            <address class="address">70-80,Bhimavaram</address>
+          </div>
+          <div class="wrapper">
+            <span class="span">Call:</span>
+            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+          </div>
+          <div class="wrapper">
+            <span class="span">Email:</span>
+            <a href="mailto:info@vishnuedu.com" class="footer-link">info@vishnuedu.com</a>
+          </div>
+        </div>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Online Platform</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">About</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Courses</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Instructor</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Events</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Instructor Profile</a>
+          </li>        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Links</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Gallery</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">News & Articles</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">FAQ's</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Sign In/Registration</a>
+          </li>
+        </ul>
+        <div class="footer-list">
+          <p class="footer-list-title">Contacts</p>
+          <p class="footer-list-text">
+            Enter your email address to register to our courses
+          </p>
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+            <button type="submit" class="btn has-before">
+            <a href="signin" class="navbar-link" span class="span">Register</span></a>
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          Copyright 2023 All Rights Reserved by <a href="#" class="copyright-link">vishnuedu</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
