@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "steadfast-bebop-397512",
+    "private_key_id": "65781c922c94dda66b3a7bb4762f2fdfae81de14",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/ZNN7IDTfAi6c\nsmjfve1dl1bzYR8L5bok5ILscRA0/s+6OqepAmZUeS8NSzoEeACTk+P0qkY7Cg4p\n0taATLH8/naVgDz5uDVvQ/9bUBXYsJcSHIfVlM3EkgA5Zp2XmkpoQIae3gA7cZOV\nWIHkZJs+UoueZebHIu1rZhMWzbVzYHDoGMUHnQ4go7txXFxyyCUeLS6NX/2lYbcA\nO32E8tKLlz3X+F4EuYTI/XaObdRS7Yu7JdyHqny2CLY/khlRCsaQlocqoo7IRXha\n+UuRVdVB7kApmkUitEahSlmrSlBO10CmutQKJ6j6QS6nUAh1WA9ksMSzGHvWFbLh\nT7SkLyz/AgMBAAECggEAFjrjxV1MRsq+Fz0xqSsqMsCtPL9/F6arJDXWbxgCxeUC\nw6KkbqD0ucMJkAW4y2QUzQ9UXsqYNatJUdpHR8egtL3pkBvA+VBIBJBlTHnUz8JT\nCat+q3QJIlfC5ufgTgeBtPIpsLIgXMcoWSRakeiNj4OO6+ryDxcjdGH6vZ9PAAN0\nHkWdriRPWRtiing9wI4RK6b2rDe0lffy7B98TcpGQNsl1VIraOfD7vLWtEQfsbl8\ne6Az0+fGb1QPUv19zLNSCuEZ2FOt2ZuN7FcsVJo7pXQAVbSeWE5myC0cutJ3g4GY\nVdCYwJr5YBa4GdE+YHv6jdkWkW/oZqmhGD6WKQIUoQKBgQDohEwo6Y4dBW5gsYMj\nRcE5Dl1yUQ/rlgyrcOoUVMVJ7zFqVhH4/kvXRsWzzCKPHpgU0FRdsutiWhSGizzm\nkd5tkABzhLYCTCnKCG6aIekgvUe3Q3RsWWkHLrvoitytVBLHH2oUdINvj4ssCQXO\n6w8W5VQHSOa/OukZOnYmQd+XqwKBgQDSuUxo3yskT/wPFZTgocziUXRzFPOgD7fB\nkaiRgKvZwibpsC0hQYMsaJCgN16kp5TixLmRhrxVchEFF5Wb3wSSGefX3wuvavnu\nXA5etdRH1T4Va23zQasPVegBNF1qR0ZLz2OhRq9SvSvY5c/NDiyeTgD68SxtsDnt\nIN/MR2Xb/QKBgFezJsK7rQWXOdWwvqS8N7AckfR/TMDwHKFBepjmjG9hj8Lq6eZ/\ni/2LzSAO2+4dfQFEvr2EsbGsBlflBrh0xm+OxAzOPpRJQ+3XFlh+d98IZZdjEvOX\nGb1CzE9eqPObZWXDnJBQjg6zFqwqTw2HrW5WW0ZQIfB4+NiyK0Qsznf3AoGBANFx\nsZuu7V97TInlpoMa7tynn3nfAkM+PCNeVlDAto6K5khxfnnGds2F5PIJ9rzrgBVg\n+RzG8Zxv8rC//0jdAtsAeqram++wAVjEENhcG/GF5t49WBxnUdG9TgscdBj1XM5v\nBJTA//PZ6KH90Wv7wada2qiRW9puRTUG7spI0No1AoGAHFQ0+zp6VjgtmdM+XMbG\nIjwmMnhIt6zChv6aR3T2LsHkWIUNtc85Ds53pqzfgirOf+Uy1c9kfCjs+l1Hv0R5\nl7ZmRn+Z3GZWQqQiZ1Aic1dBABpNije1WrGQwX8NCxfTxsPrD1jeQYQPhGus0Smk\nTmh+AvHKc5x3V6b/mUl3WAE=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-rihld@steadfast-bebop-397512.iam.gserviceaccount.com",
+    "client_id": "102057760491957147198",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-rihld%40steadfast-bebop-397512.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
